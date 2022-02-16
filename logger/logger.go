@@ -29,7 +29,8 @@ func init() {
 	logger.Attach("console", go_logger.LOGGER_LEVEL_DEBUG, consoleConfig)
 	// file adapter config
 	fileConfig := &go_logger.FileConfig{
-		Filename: fmt.Sprintf("/var/log/monitor/monitor.log.%v", NowDay), // The file name of the logger output, does not exist automatically
+		// The file name of the logger output, does not exist automatically
+		Filename: fmt.Sprintf("/var/log/monitor/monitor.log.%v", NowDay),
 		// If you want to separate separate logs into files, configure LevelFileName parameters.
 		// LevelFileName: map[int]string{
 		// 	logger.LoggerLevel("error"): "./error.log", // The error level log is written to the error.log file.
