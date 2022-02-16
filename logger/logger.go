@@ -30,7 +30,7 @@ func init() {
 	// file adapter config
 	fileConfig := &go_logger.FileConfig{
 		// The file name of the logger output, does not exist automatically
-		Filename: fmt.Sprintf("/var/log/monitor/monitor.log.%v", NowDay),
+		Filename: fmt.Sprintf("/var/log/monitor/monitor.%v.log", NowDay),
 		// If you want to separate separate logs into files, configure LevelFileName parameters.
 		// LevelFileName: map[int]string{
 		// 	logger.LoggerLevel("error"): "./error.log", // The error level log is written to the error.log file.

@@ -23,13 +23,12 @@ d=5
 echo """#!/bin/bash
 
 start(){
-    cd $home_dir
-	chmod +x $name
-    nohup ./$name -m $m -s $d > /dev/null 2>&1 &
+	chmod +x $home_dir/$name
+    nohup $home_dir/$name -m $m -s $d > /dev/null 2>&1 &
 }
 
 stop(){
-    ps -ef | grep "./$name -m $m -s $d" | grep -v "grep" | awk '{print \$2}' | xargs kill 
+    ps -ef | grep '$home_dir/$name -m $m -s $d' | grep -v "grep" | awk '{print \$2}' | xargs kill 
 
 }
 
@@ -45,8 +44,8 @@ stop)
     ;;
 esac
 
-""" > $home_dir/$name.sh
-chmod +x $home_dir/$name.sh
+""" > /etc/$name.sh
+chmod +x /etc/$name.sh
 echo """
 [Unit]
 Description=Media wanager Service
@@ -55,8 +54,8 @@ After=network.target
 [Service]
 Type=forking
  
-ExecStart=/bin/bash -c '$home_dir/${name}.sh start'
-ExecStop=$home_dir/${name}.sh stop
+ExecStart=/bin/bash -c '/etc/$name.sh start'
+ExecStop=/etc/$name.sh stop
  
 [Install]
 WantedBy=multi-user.target
