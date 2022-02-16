@@ -3,8 +3,8 @@
 解压压缩文件后执行`bash install.sh`
 
 ```shell
-# 1(每隔多少分钟运行一次) 5(保留多少天的数据)
-bash install.sh  1 5
+# 运行频率 多少分钟一次和保存天数 可修改install.sh脚本 默认1分钟一次 保存5天
+bash install.sh  
 ```
 
 安装完成后会自动启动，程序日志为`/var/log/monitor/monitor.log`以日期命名

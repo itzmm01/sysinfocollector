@@ -1,16 +1,24 @@
 name="sysinfocollector"
 home_dir=`pwd`
 
-if [ "$1" == "" ]; then
-    m=1
-else
-    m=$1
-fi
-if [ "$2" == "" ]; then
-    d=5
-else
-    d=$2
-fi
+
+# 运行频率 多少分钟一次 默认1分钟一次 
+m=1
+# 保存天数 默认保存5天
+d=5	
+	
+#if [ "$1" == "" ]; then
+#    # 运行频率 多少分钟一次
+#    m=1
+#else
+#    m=$1
+#fi
+#if [ "$2" == "" ]; then
+#    # 保存天数
+#    d=5
+#else
+#    d=$2
+#fi
 
 echo """#!/bin/bash
 
