@@ -72,7 +72,7 @@ func Run(config config.Config, cmdList map[string]string) {
 		logFile := fmt.Sprintf("%v/%v.%v.log", logDir, name, nowTime)
 		nowTime1 := time.Now().Format("2006-01-02 15:04:05")
 		cmdStr := fmt.Sprintf("%v >> %v 2>&1", cmd, logFile)
-		tools.CmdRun(fmt.Sprintf("echo '%v: %v-------------------------' >> %v", cmdStr, nowTime1, logFile))
+		tools.CmdRun(fmt.Sprintf("echo '%v: %v-------------------------' >> %v", nowTime1, cmdStr, logFile))
 		tools.CmdRun(cmdStr)
 	}
 	logger.Logger.Infof("collection info end")

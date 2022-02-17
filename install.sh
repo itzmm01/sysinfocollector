@@ -41,6 +41,7 @@ stop)
     ;;
 *)
     echo "unknow args"
+    echo "start|stop"
     ;;
 esac
 
