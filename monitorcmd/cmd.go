@@ -37,9 +37,10 @@ func cleanHistoryFile(match, path string, saveNum int) {
 
 // run clean
 func RunClean(fileNameList map[string]string, logDir string, logSaveDay int) {
+	ArchiveHistoryFile("monitor.20*.log", logDir, 1)
 	for name := range fileNameList {
-		ArchiveHistoryFile(fmt.Sprintf("%v*.log", name), logDir, 1)
-		cleanHistoryFile(fmt.Sprintf("%v*.tar.gz", name), logDir, logSaveDay)
+		ArchiveHistoryFile(fmt.Sprintf("%v.20*.log", name), logDir, 1)
+		cleanHistoryFile(fmt.Sprintf("%v.20*.log.tar.gz", name), logDir, logSaveDay)
 	}
 }
 

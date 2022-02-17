@@ -40,8 +40,7 @@ stop)
     stop
     ;;
 *)
-    echo "unknow args"
-    echo "start|stop"
+    echo 'unknow args: \$1, please use: start|stop'
     ;;
 esac
 
