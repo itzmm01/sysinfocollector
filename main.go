@@ -23,7 +23,7 @@ func main() {
 	logger.Logger.Infof("Start monitor...")
 
 	cmdList := map[string]string{
-		"iostat": "iostat",
+		"iostat": "iostat -x",
 		"ps":     "ps",
 		"sar":    "sar",
 		"vmstat": "vmstat",
